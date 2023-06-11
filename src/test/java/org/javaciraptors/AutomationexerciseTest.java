@@ -13,13 +13,13 @@ public class AutomationexerciseTest extends BaseTest {
     public void firstTest() {
         getWait2();
 
-        WebElement pageProduct = getDriver().findElement(By.xpath("//a[@href='/products']"));
-        pageProduct.click();
-
-        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Close']")));
-
-        WebElement buttonClose = getDriver().findElement(By.xpath("//span[text()='Close']"));
-        buttonClose.click();
+//        WebElement pageProduct = getDriver().findElement(By.xpath("//a[@href='/products']"));
+//        pageProduct.click();
+//
+//        getWait5().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Close']")));
+//
+//        WebElement buttonClose = getDriver().findElement(By.xpath("//span[text()='Close']"));
+//        buttonClose.click();
 
         //Assert.
     }

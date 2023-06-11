@@ -20,6 +20,8 @@ public class AutomationexerciseTest extends BaseTest {
 
         WebElement buttonClose = getDriver().findElement(By.xpath("//span[text()='Close']"));
         buttonClose.click();
+
+        //
     }
 
 }

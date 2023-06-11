@@ -28,5 +28,12 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('./pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
       - name: Maven test
         run: mvn test
+
+      - name: Attach screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          path: screenshots

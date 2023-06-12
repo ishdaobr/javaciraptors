@@ -10,12 +10,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage clickRegister() {
-        getDriver().findElement(By.xpath("//a[text()='Register']")).click();
-        return this;
-    }
-
-    public MainPage clickLogin() {
-        getDriver().findElement(By.xpath("//a[text()='Log in']")).click();
+        getDriver().findElement(By.xpath("//a[normalize-space()='Register']")).click();
         return this;
     }
 }

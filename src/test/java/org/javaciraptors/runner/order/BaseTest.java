@@ -1,4 +1,4 @@
-package org.javaciraptors.runner;
+package org.javaciraptors.runner.order;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

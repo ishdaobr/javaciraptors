@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class AutomationexerciseTest extends BaseTest {
 
-    @Ignore
     @Test
     public void firstTest() {
         getWait2();

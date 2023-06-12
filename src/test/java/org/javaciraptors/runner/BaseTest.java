@@ -25,7 +25,7 @@ public abstract class BaseTest {
 
         driver = new ChromeDriver(chromeOptions);
 
-        driver.get("https://demowebshop.tricentis.com/");
+        driver.get("https://demowebshop.tricentis.com");
     }
 
     @AfterMethod

@@ -1,5 +1,6 @@
 package org.javaciraptors.model;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -39,5 +40,10 @@ public abstract class BasePage {
             wait10 = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         }
         return wait10;
+    }
+
+    public MainPage clickLogo() {
+        getDriver().findElement(By.xpath("//img[@alt='Tricentis Demo Web Shop']")).click();
+        return new MainPage(getDriver());
     }
 }

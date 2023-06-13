@@ -12,7 +12,7 @@ public class ProductTest extends BaseTest {
     public void testCheckLaptopPriceTest() {
         final String price = "1590.00";
 
-        getWait2().until(ExpectedConditions.elementToBeClickable(
+        getWait5().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']"))).click();
         String productPrice = new ProductPage(getDriver()).getPrice();
 
@@ -23,7 +23,7 @@ public class ProductTest extends BaseTest {
     public void testCheckProductName() {
         final String name = "14.1-inch Laptop";
 
-        getWait2().until(ExpectedConditions.elementToBeClickable(
+        getWait10().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']"))).click();
 
         String productName = new ProductPage(getDriver()).getName();

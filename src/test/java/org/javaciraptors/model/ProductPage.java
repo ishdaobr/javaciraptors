@@ -44,4 +44,13 @@ public class ProductPage extends BasePage {
         return getDriver().findElement(By.xpath("//div[@class='stock']/span[@class='value']"))
                 .getText().trim();
     }
+
+    public boolean getFreeShipping() {
+        return getDriver().findElement(By.xpath("//div[@class='overview']")).getText().contains("Free shipping");
+    }
+
+    public ProductReviewPage addAndReadReview() {
+        getDriver().findElement(By.xpath("//div[@class='product-review-links']/a[2]")).click();
+        return new ProductReviewPage(getDriver());
+    }
 }

@@ -44,4 +44,12 @@ public class ProductTest extends BaseTest {
 
         Assert.assertEquals(text, welcomeText);
     }
+
+    @Test
+    public void testFreeShipping() {
+        getDriver().findElement(
+                By.xpath("//div[@class='picture']//img[@title='Show details for Build your own cheap computer']")).click();
+
+        Assert.assertTrue(new ProductPage(getDriver()).getFreeShipping());
+    }
 }

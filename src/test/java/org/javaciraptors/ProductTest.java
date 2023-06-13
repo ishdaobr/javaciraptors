@@ -1,5 +1,6 @@
 package org.javaciraptors;
 
+import org.javaciraptors.model.ProductPage;
 import org.javaciraptors.runner.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,9 +14,33 @@ public class ProductTest extends BaseTest {
 
         getWait2().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']"))).click();
-        String laptopPrice = getWait2().until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//div[@class='product-price']"))).getText().trim();
+        String productPrice = new ProductPage(getDriver()).getPrice();
 
-        Assert.assertEquals(laptopPrice, price);
+        Assert.assertEquals(productPrice, price);
+    }
+
+    @Test
+    public void testCheckProductName() {
+        final String name = "14.1-inch Laptop";
+
+        getWait2().until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']"))).click();
+
+        String productName = new ProductPage(getDriver()).getName();
+
+        Assert.assertEquals(productName, name);
+    }
+
+    @Test
+    public void testCheckBackToMainPage() {
+        final String welcomeText = "Welcome to our store";
+
+        getWait2().until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']"))).click();
+
+        new ProductPage(getDriver()).clickLogo();
+        String text = getDriver().findElement(By.xpath("//h2[@class='topic-html-content-header']")).getText().trim();
+
+        Assert.assertEquals(text, welcomeText);
     }
 }

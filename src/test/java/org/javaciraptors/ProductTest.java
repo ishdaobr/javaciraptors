@@ -48,8 +48,46 @@ public class ProductTest extends BaseTest {
     @Test
     public void testFreeShipping() {
         getDriver().findElement(
-                By.xpath("//div[@class='picture']//img[@title='Show details for Build your own cheap computer']")).click();
+                By.xpath("//div[@class='picture']//img[@title='Show details for Build your own cheap computer']"))
+                .click();
 
         Assert.assertTrue(new ProductPage(getDriver()).getFreeShipping());
+    }
+
+    @Test
+    public void testCheckTag() {
+        final String tag = "computer";
+
+        getDriver().findElement(
+                By.xpath("//div[@class='picture']//img[@title='Show details for Build your own cheap computer']"))
+                .click();
+
+        Assert.assertTrue(new ProductPage(getDriver()).checkTag(tag));
+    }
+
+    @Test
+    public void testOrderGiftCard() {
+        final String recipientName = "Maxim";
+        final String recipientEmail = "2222@ddd.rr";
+        final String senderName = "Artem";
+        final String senderEmail = "dddd@djjj.ccc";
+        final String message = "Best wishes";
+
+        getDriver().findElement(
+                By.xpath("//div[@class='picture']//img[@title='Show details for $25 Virtual Gift Card']"))
+                .click();
+
+        new ProductPage(getDriver())
+                .setRecipientName(recipientName)
+                .setRecipientEmail(recipientEmail)
+                .setSenderName(senderName)
+                .setSenderEmail(senderEmail)
+                .setMessage(message)
+                .addToCart();
+
+        getDriver().findElement(By.xpath("//li[@id='topcartlink']")).click();
+
+        Assert.assertEquals(getDriver().findElement(
+                By.xpath("//a[@class='product-name']")).getText().trim(), "$25 Virtual Gift Card");
     }
 }

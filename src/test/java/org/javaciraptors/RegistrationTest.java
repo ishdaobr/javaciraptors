@@ -31,6 +31,9 @@ public class RegistrationTest extends BaseTest {
         new RegistrationPage(getDriver())
                 .registerNewUser(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD);
 
-        Assert.assertEquals(getDriver().findElement(By.xpath("//div[@class = 'result']")).getText(), expectedResultText);
+        String actualResultText = new RegistrationPage(getDriver())
+                .getRegistrationConfirmationMessage();
+
+        Assert.assertEquals(actualResultText, expectedResultText);
     }
 }

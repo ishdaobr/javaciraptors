@@ -70,4 +70,15 @@ public class RegistrationPage extends BasePage {
                 .enterConfirmPassword(password)
                 .clickRegister();
     }
+
+    public String getRegistrationConfirmationMessage() {
+
+        return getDriver().findElement(By.xpath("//div[@class = 'result']")).getText();
+    }
+
+    public RegistrationPage clickContinue() {
+        getDriver().findElement(By.xpath("//div[@class = 'page registration-result-page']//input")).click();
+
+        return this;
+    }
 }

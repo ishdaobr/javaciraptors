@@ -3,6 +3,7 @@ package org.javaciraptors.model;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -100,6 +101,57 @@ public class ProductPage extends BasePage {
 
     public ProductPage setMessage(String message) {
         getDriver().findElement(By.xpath("//textarea[@class='message']")).sendKeys(message);
+        return this;
+    }
+
+    public ProductPage setShoeSize(String size) {
+        Select sizeSelect = new Select(getDriver().findElement(
+                By.xpath("//select[@id='product_attribute_28_7_10']")));
+        sizeSelect.selectByVisibleText(size);
+        return this;
+    }
+
+    public ProductPage setShoeColor(String color) {
+        getDriver().findElement(By.xpath("//span[@title='" + color + "']")).click();
+        return this;
+    }
+
+    public EmailFriendsPage clickEmailFriends() {
+        getDriver().findElement(By.xpath("//input[@value='Email a friend']")).click();
+        return new EmailFriendsPage(getDriver());
+    }
+
+    public ProductPage addToWishList() {
+        getDriver().findElement(By.xpath("//input[@value='Add to wishlist']")).click();
+        return this;
+    }
+
+    public CompareProductsPage addToCompareList() {
+        getDriver().findElement(By.xpath("//input[@value='Add to wishlist']")).click();
+        return new CompareProductsPage(getDriver());
+    }
+
+    public ProductPage setShirtSize(String size) {
+        Select sizeSelect = new Select(getDriver().findElement(
+                By.xpath("//select[@id='product_attribute_5_7_1']")));
+        sizeSelect.selectByVisibleText(size);
+        return this;
+    }
+
+    public ProductPage setJewelryMaterial(String material) {
+        Select sizeSelect = new Select(getDriver().findElement(
+                By.xpath("//select[@id='product_attribute_71_9_15']")));
+        sizeSelect.selectByVisibleText(material);
+        return this;
+    }
+
+    public ProductPage setJewelryLength(String length) {
+        getDriver().findElement(By.xpath("//input[@id='product_attribute_71_10_16']")).sendKeys(length);
+        return this;
+    }
+
+    public ProductPage setJewelryPendant(String pendant) {
+        getDriver().findElement(By.xpath("//ul[@class='option-list']//*[contains(text(), '" + pendant + " ')]")).click();
         return this;
     }
 }

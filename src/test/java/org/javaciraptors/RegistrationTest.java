@@ -36,4 +36,15 @@ public class RegistrationTest extends BaseTest {
 
         Assert.assertEquals(actualResultText, expectedResultText);
     }
+
+
+    @Test (dependsOnMethods = "testRegisterNewUser_HappyPath")
+    public void testConfirmNewUserRegistration_HappyPath() {
+
+        final String expectedResultHeader = "Welcome to our store";
+
+        String actualResultHeader = new MainPage(getDriver()).getContentHeader();
+
+        Assert.assertEquals(actualResultHeader, expectedResultHeader);
+    }
 }

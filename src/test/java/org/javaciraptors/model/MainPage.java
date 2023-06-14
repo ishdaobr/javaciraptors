@@ -13,4 +13,9 @@ public class MainPage extends BasePage {
         getDriver().findElement(By.xpath("//a[normalize-space()='Register']")).click();
         return this;
     }
+
+    public String getContentHeader() {
+
+        return getDriver().findElement(By.xpath("//h2[@class = 'topic-html-content-header']")).getText();
+    }
 }

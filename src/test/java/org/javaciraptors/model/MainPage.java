@@ -18,4 +18,9 @@ public class MainPage extends BasePage {
 
         return getDriver().findElement(By.xpath("//h2[@class = 'topic-html-content-header']")).getText();
     }
+
+    public MainPage clickProduct() {
+        getDriver().findElement(By.linkText("$25 Virtual Gift Card")).click();
+        return this;
+    }
 }

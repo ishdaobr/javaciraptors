@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 public class EmailFriendsTest extends BaseTest {
 
-    @Ignore
     @Test
     public void testSendEmailWithoutLogin() {
         final String email = "111@222.com";

@@ -41,5 +41,4 @@ public class CompareProductsPage extends BasePage {
                 By.xpath("//a[normalize-space()='" + productName + "']")).click();
         return new ProductPage(getDriver());
     }
-
 }

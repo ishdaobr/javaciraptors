@@ -48,7 +48,6 @@ public class CompareProductsTest extends BaseTest {
         Assert.assertEquals(prodName, productName);
     }
 
-    @Ignore
     @Test
     public void testOpenProductPage() {
         final String productName = "$25 Virtual Gift Card";

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class EmailFriendsPage extends BasePage {
 
+
     @FindBy(xpath = "//a[@class='product']")
     private WebElement productName;
 

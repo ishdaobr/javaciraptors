@@ -73,7 +73,7 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//input[@value='Add to wishlist']")
     private WebElement addToWishListButton;
 
-    @FindBy(xpath = "//input[@value='Add to wishlist']")
+    @FindBy(xpath = "//input[@value='Add to compare list']")
     private WebElement addToCompareList;
 
     @FindBy(xpath = "//select[@id='product_attribute_5_7_1']")

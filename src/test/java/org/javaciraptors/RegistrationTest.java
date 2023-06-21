@@ -3,6 +3,7 @@ package org.javaciraptors;
 import org.javaciraptors.model.MainPage;
 import org.javaciraptors.model.RegistrationPage;
 import org.javaciraptors.runner.BaseTest;
+import org.javaciraptors.runner.TestUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,8 +29,7 @@ public class RegistrationTest extends BaseTest {
         new MainPage(getDriver())
                 .clickRegister();
 
-        new RegistrationPage(getDriver())
-                .registerNewUser(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD);
+        TestUtils.registerNewUser(this, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD);
 
         String actualResultText = new RegistrationPage(getDriver())
                 .getRegistrationConfirmationMessage();

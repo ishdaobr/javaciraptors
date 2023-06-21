@@ -1,26 +1,36 @@
 package org.javaciraptors.model;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePage {
+
+    @FindBy(linkText = "Register")
+    private WebElement registerButton;
+
+    @FindBy(xpath = "//h2[@class = 'topic-html-content-header']")
+    private WebElement contentHeader;
+
+    @FindBy(linkText = "$25 Virtual Gift Card")
+    private WebElement productItem;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
     public MainPage clickRegister() {
-        getDriver().findElement(By.xpath("//a[normalize-space()='Register']")).click();
+        registerButton.click();
+
         return this;
     }
 
     public String getContentHeader() {
-
-        return getDriver().findElement(By.xpath("//h2[@class = 'topic-html-content-header']")).getText();
+        return contentHeader.getText();
     }
 
     public MainPage clickProduct() {
-        getDriver().findElement(By.linkText("$25 Virtual Gift Card")).click();
+        productItem.click();
         return this;
     }
 }

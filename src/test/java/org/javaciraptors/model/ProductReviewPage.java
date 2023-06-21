@@ -1,5 +1,6 @@
 package org.javaciraptors.model;
 
+import org.javaciraptors.runner.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,21 +15,6 @@ public class ProductReviewPage extends BasePage {
 
     @FindBy(id = "AddProductReview_ReviewText")
     private WebElement reviewTextField;
-
-    @FindBy(id = "addproductrating_1")
-    private WebElement radioButton1;
-
-    @FindBy(id = "addproductrating_2")
-    private WebElement radioButton2;
-
-    @FindBy(id = "addproductrating_3")
-    private WebElement radioButton3;
-
-    @FindBy(id = "addproductrating_4")
-    private WebElement radioButton4;
-
-    @FindBy(id = "addproductrating_5")
-    private WebElement radioButton5;
 
     @FindBy(xpath = "//form[@action = '/productreviews/2']/div/input")
     private WebElement submitReviewButton;
@@ -80,32 +66,8 @@ public class ProductReviewPage extends BasePage {
         return this;
     }
 
-    public ProductReviewPage clickRadioButton1() {
-        radioButton1.click();
-
-        return this;
-    }
-
-    public ProductReviewPage clickRadioButton2() {
-        radioButton2.click();
-
-        return this;
-    }
-
-    public ProductReviewPage clickRadioButton3() {
-        radioButton3.click();
-
-        return this;
-    }
-
-    public ProductReviewPage clickRadioButton4() {
-        radioButton4.click();
-
-        return this;
-    }
-
-    public ProductReviewPage clickRadioButton5() {
-        radioButton5.click();
+    public ProductReviewPage clickRadioButton(TestUtils.Rating rating) {
+        getDriver().findElement(rating.getLocator()).click();
 
         return this;
     }

@@ -6,6 +6,7 @@ import org.javaciraptors.model.ProductPage;
 import org.javaciraptors.model.ProductReviewPage;
 import org.javaciraptors.model.RegistrationPage;
 import org.javaciraptors.runner.BaseTest;
+import org.javaciraptors.runner.TestUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,7 +33,12 @@ public class ProductReviewTest extends BaseTest {
                 .clickRegister();
 
         new RegistrationPage(getDriver())
-                .registerNewUser(FIRST_NAME, LAST_NAME, EMAIL, PASSWORD);
+                .enterFirstName(FIRST_NAME)
+                .enterLastName(LAST_NAME)
+                .enterEmail(EMAIL)
+                .enterPassword(PASSWORD)
+                .enterConfirmPassword(PASSWORD)
+                .clickRegister();
 
         new RegistrationPage(getDriver())
                 .clickContinue();
@@ -46,7 +52,7 @@ public class ProductReviewTest extends BaseTest {
         new ProductReviewPage(getDriver())
                 .enterReviewTitle("Test title")
                 .enterReviewText("Test text")
-                .clickRadioButton1()
+                .clickRadioButton(TestUtils.Rating.radioButton1)
                 .clickSubmitReview();
 
         String actualResultTitle = new ProductReviewPage(getDriver())
@@ -63,5 +69,6 @@ public class ProductReviewTest extends BaseTest {
         Assert.assertEquals(actualResultName, expectedResultName);
         Assert.assertEquals(actualResultRating, expectedResultRating);
     }
+
 }
 

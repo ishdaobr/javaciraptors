@@ -1,10 +1,11 @@
 package org.javaciraptors.model;
 
+import org.javaciraptors.model.base.BaseModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainPage extends BasePage {
+public class MainPage extends BaseModel {
 
     @FindBy(linkText = "Register")
     private WebElement registerButton;

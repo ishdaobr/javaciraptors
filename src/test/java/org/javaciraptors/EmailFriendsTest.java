@@ -4,7 +4,6 @@ import org.javaciraptors.model.ProductPage;
 import org.javaciraptors.runner.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class EmailFriendsTest extends BaseTest {

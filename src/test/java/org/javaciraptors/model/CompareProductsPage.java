@@ -1,11 +1,12 @@
 package org.javaciraptors.model;
 
+import org.javaciraptors.model.base.BaseMainHeaderPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CompareProductsPage extends BasePage {
+public class CompareProductsPage extends BaseMainHeaderPage {
 
     @FindBy(xpath = "//a[@class='clear-list']")
     private WebElement clearListButton;

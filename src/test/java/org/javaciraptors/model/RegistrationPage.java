@@ -1,11 +1,11 @@
 package org.javaciraptors.model;
 
-import org.openqa.selenium.By;
+import org.javaciraptors.model.base.BaseModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegistrationPage extends BasePage {
+public class RegistrationPage extends BaseModel {
 
     @FindBy(id = "gender-male")
     private WebElement genderMaleRadiobutton;

@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 public class ProductTest extends BaseTest {
     @Test
     public void testCheckLaptopPriceTest() {
+
         final String price = "1590.00";
 
         getDriver().findElement(
@@ -41,7 +42,9 @@ public class ProductTest extends BaseTest {
         getDriver().findElement(
                 By.xpath("//div[@class='picture']//img[@title='Show details for 14.1-inch Laptop']")).click();
 
-        new ProductPage(getDriver()).clickLogo();
+        new ProductPage(getDriver())
+                .getHeader()
+                .clickLogo();
         String text = getDriver().findElement(By.xpath("//h2[@class='topic-html-content-header']"))
                 .getText().trim();
 

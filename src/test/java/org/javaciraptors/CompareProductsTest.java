@@ -35,6 +35,7 @@ public class CompareProductsTest extends BaseTest {
 
         new ProductPage(getDriver())
                 .addToCompareList()
+                .getHeader()
                 .clickLogo();
 
         getDriver().findElement(
@@ -58,6 +59,7 @@ public class CompareProductsTest extends BaseTest {
 
         new ProductPage(getDriver())
                 .addToCompareList()
+                .getHeader()
                 .clickLogo();
 
         getDriver().findElement(

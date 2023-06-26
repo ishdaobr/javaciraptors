@@ -1,10 +1,11 @@
 package org.javaciraptors.model;
 
+import org.javaciraptors.model.base.BaseModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class EmailFriendsPage extends BasePage {
+public class EmailFriendsPage extends BaseModel {
 
     @FindBy(xpath = "//a[@class='product']")
     private WebElement productName;

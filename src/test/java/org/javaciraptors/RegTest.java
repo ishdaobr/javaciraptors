@@ -1,6 +1,5 @@
 package org.javaciraptors;
 
-
 import org.javaciraptors.model.MainPage;
 import org.javaciraptors.runner.BaseTest;
 import org.openqa.selenium.By;

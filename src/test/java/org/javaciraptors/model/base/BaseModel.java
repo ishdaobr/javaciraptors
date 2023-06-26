@@ -1,12 +1,11 @@
-package org.javaciraptors.model;
+package org.javaciraptors.model.base;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public abstract class BasePage {
+public abstract class BaseModel {
 
     private WebDriverWait wait2;
     private WebDriverWait wait5;
@@ -14,7 +13,7 @@ public abstract class BasePage {
 
     private final WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    public BaseModel(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -44,8 +43,4 @@ public abstract class BasePage {
         return wait10;
     }
 
-    public MainPage clickLogo() {
-        getDriver().findElement(By.xpath("//img[@alt='Tricentis Demo Web Shop']")).click();
-        return new MainPage(getDriver());
-    }
 }

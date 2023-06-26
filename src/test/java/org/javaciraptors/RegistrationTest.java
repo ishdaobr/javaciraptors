@@ -4,7 +4,6 @@ import org.javaciraptors.model.MainPage;
 import org.javaciraptors.model.RegistrationPage;
 import org.javaciraptors.runner.BaseTest;
 import org.javaciraptors.runner.TestUtils;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;

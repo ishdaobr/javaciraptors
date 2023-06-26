@@ -1,11 +1,12 @@
 package org.javaciraptors.model;
 
+import org.javaciraptors.model.base.BaseModel;
 import org.javaciraptors.runner.TestUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductReviewPage extends BasePage {
+public class ProductReviewPage extends BaseModel {
 
     @FindBy(xpath = "//div[@class = 'page-title']//a")
     private WebElement productLink;

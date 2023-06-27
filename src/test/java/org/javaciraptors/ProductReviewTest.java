@@ -29,16 +29,15 @@ public class ProductReviewTest extends BaseTest {
         final String expectedResultName = "From: " + FIRST_NAME;
         final String expectedResultRating = "width: 20%;";
 
-        new MainPage(getDriver())
-                .clickRegister();
-
         new RegistrationPage(getDriver())
+                .getHeader()
+                .clickRegister()
                 .enterFirstName(FIRST_NAME)
                 .enterLastName(LAST_NAME)
                 .enterEmail(EMAIL)
                 .enterPassword(PASSWORD)
                 .enterConfirmPassword(PASSWORD)
-                .clickRegister();
+                .clickRegisterButton();
 
         new RegistrationPage(getDriver())
                 .clickContinue();

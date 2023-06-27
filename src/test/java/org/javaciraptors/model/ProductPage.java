@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class ProductPage extends BaseMainHeaderPage {
+public class ProductPage extends BaseMainHeaderPage<ProductPage> {
 
     @FindBy(xpath = "//div[@class='product-price']")
     private WebElement price;

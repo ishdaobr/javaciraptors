@@ -2,17 +2,31 @@ package org.javaciraptors.model.component;
 
 import org.javaciraptors.model.MainPage;
 import org.javaciraptors.model.base.BaseHeaderComponent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.javaciraptors.model.base.BasePage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class MainHeaderComponent extends BaseHeaderComponent {
+public class MainHeaderComponent<Page extends BasePage<?>> extends BaseHeaderComponent<Page> {
 
-    public MainHeaderComponent(WebDriver driver) {
-        super(driver);
+    @FindBy(xpath = "//img[@alt='Tricentis Demo Web Shop']")
+    private WebElement logo;
+
+    @FindBy(linkText = "Register")
+    private WebElement registerButton;
+
+    public MainHeaderComponent(Page page) {
+        super(page);
     }
 
     public MainPage clickLogo() {
-        getDriver().findElement(By.xpath("//img[@alt='Tricentis Demo Web Shop']")).click();
+        logo.click();
         return new MainPage(getDriver());
+
+    }
+
+    public Page clickRegister() {
+        registerButton.click();
+        return getPage();
+
     }
 }

@@ -1,12 +1,16 @@
 package org.javaciraptors.model.base;
 
-import org.openqa.selenium.WebDriver;
+public class BaseHeaderComponent<Page extends BasePage<?>> extends BaseModel{
 
-public class BaseHeaderComponent extends BaseModel{
+    private final Page page;
 
-    public BaseHeaderComponent(WebDriver driver) {
-        super(driver);
+    public BaseHeaderComponent(Page page) {
+        super(page.getDriver());
+        this.page = page;
     }
 
+    protected Page getPage() {
+        return page;
+    }
 
 }

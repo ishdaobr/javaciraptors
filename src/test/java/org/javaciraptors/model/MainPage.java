@@ -1,14 +1,11 @@
 package org.javaciraptors.model;
 
-import org.javaciraptors.model.base.BaseModel;
+import org.javaciraptors.model.base.BaseMainHeaderPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainPage extends BaseModel {
-
-    @FindBy(linkText = "Register")
-    private WebElement registerButton;
+public class MainPage extends BaseMainHeaderPage<MainPage> {
 
     @FindBy(xpath = "//h2[@class = 'topic-html-content-header']")
     private WebElement contentHeader;
@@ -18,12 +15,6 @@ public class MainPage extends BaseModel {
 
     public MainPage(WebDriver driver) {
         super(driver);
-    }
-
-    public MainPage clickRegister() {
-        registerButton.click();
-
-        return this;
     }
 
     public String getContentHeader() {

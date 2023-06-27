@@ -1,6 +1,6 @@
 package org.javaciraptors;
 
-import org.javaciraptors.model.MainPage;
+import org.javaciraptors.model.RegistrationPage;
 import org.javaciraptors.runner.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,8 @@ public class RegTest extends BaseTest {
     @Test
     public void clickRegister() {
 
-        MainPage mainPage = new MainPage(getDriver())
+       new RegistrationPage(getDriver())
+                .getHeader()
                 .clickRegister();
 
         WebElement textRegister =  getDriver().findElement(By.xpath("//h1[normalize-space()='Register']"));

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CompareProductsPage extends BaseMainHeaderPage {
+public class CompareProductsPage extends BaseMainHeaderPage<CompareProductsPage> {
 
     @FindBy(xpath = "//a[@class='clear-list']")
     private WebElement clearListButton;

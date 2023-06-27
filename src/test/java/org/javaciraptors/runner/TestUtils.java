@@ -1,6 +1,5 @@
 package org.javaciraptors.runner;
 
-import org.javaciraptors.model.MainPage;
 import org.javaciraptors.model.RegistrationPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,15 +28,14 @@ public class TestUtils {
                                 String password) {
         final WebDriver driver = baseTest.getDriver();
 
-        new MainPage(driver)
-                .clickRegister();
-
         new RegistrationPage(driver)
+                .getHeader()
+                .clickRegister()
                 .enterFirstName(firstName)
                 .enterLastName(lastName)
                 .enterEmail(email)
                 .enterPassword(password)
                 .enterConfirmPassword(password)
-                .clickRegister();
+                .clickRegisterButton();
     }
 }

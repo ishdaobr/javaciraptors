@@ -26,6 +26,7 @@ public class RegistrationTest extends BaseTest {
         final String expectedResultText = "Your registration completed";
 
         new MainPage(getDriver())
+                .getHeader()
                 .clickRegister();
 
         TestUtils.registerNewUser(this, FIRST_NAME, LAST_NAME, EMAIL, PASSWORD);

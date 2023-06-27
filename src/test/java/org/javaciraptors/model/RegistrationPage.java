@@ -1,11 +1,11 @@
 package org.javaciraptors.model;
 
-import org.javaciraptors.model.base.BaseModel;
+import org.javaciraptors.model.base.BaseMainHeaderPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegistrationPage extends BaseModel {
+public class RegistrationPage extends BaseMainHeaderPage<RegistrationPage> {
 
     @FindBy(id = "gender-male")
     private WebElement genderMaleRadiobutton;
@@ -83,25 +83,11 @@ public class RegistrationPage extends BaseModel {
         return this;
     }
 
-    public RegistrationPage clickRegister() {
+    public RegistrationPage clickRegisterButton() {
         registerButton.click();
 
         return this;
     }
-
-//    public void registerNewUser(String firstName, String lastName, String email,
-//                                String password) {
-//        new MainPage(getDriver())
-//                .clickRegister();
-//
-//        new RegistrationPage(getDriver())
-//                .enterFirstName(firstName)
-//                .enterLastName(lastName)
-//                .enterEmail(email)
-//                .enterPassword(password)
-//                .enterConfirmPassword(password)
-//                .clickRegister();
-//    }
 
     public String getRegistrationConfirmationMessage() {
         return confirmationMessage.getText();
